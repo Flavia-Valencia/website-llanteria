@@ -90,7 +90,7 @@ img {
     color: #ffffff;
     background-image:
         linear-gradient(to right, #850d19, rgba(30, 27, 29, 0.94) 48%, rgba(20, 20, 20, 0.18)),
-        url("../includes/hero-llanteria.jpg");
+        url("../includes/img/hero-llanteria.jpg");
     background-size: cover;
     background-position: center;
 }
