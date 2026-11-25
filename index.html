@@ -15,7 +15,7 @@
 <body>
     <header class="encabezado">
               
-                <h2>El Frenazo</h2>
+                <img src="includes/img/logo-ElFrenazo.png" alt="Logo de El Frenazo">
 
         <nav class="menu">
             <ul>
@@ -33,19 +33,19 @@
             <div class="lema">
                 <h1>Centro de Llantas El Frenazo</h1>
                 <p>
-                    el mero lema de el frenazo
+                    Atención para tu vehículo, llantas para seguir adelante. Encuentra orientación y servicios para mantenerte seguro en cada recorrido.
                 </p>
             </div>
 
             <div class="relleno">
                 <article class="experiencia">
-                    <h3>+25 años</h3>
-                    <p>De experiencia</p>
+                    <h3>Atención cercana</h3>
+                    <p>Asesoría para elegir tus llantas</p>
                 </article>
 
                 <article class="calidad">
-                    <h3>Calidad</h3>
-                    <p>Productos seleccionados</p>
+                    <h3>Servicio integral</h3>
+                    <p>Soluciones para el cuidado de tus llantas</p>
                 </article>
             </div>
         </section>
@@ -54,385 +54,367 @@
         <section id="catalogo">
             <div class="header-catalogo">
                 <h2>Nuestras mejores elecciones</h2>
-                <p>Encuentra las llantas ideales para tu vehículo.</p>
+                <p>Cuéntanos qué vehículo tienes y te ayudamos a encontrar una opción adecuada para tu uso y presupuesto.</p>
+                <p class="resultado-busqueda" aria-live="polite" hidden></p>
             </div>
 
-            <div class="filtrar">
-                <button type="button">Nuevas</button>
-                <button type="button">Usadas</button>
+            <form class="busqueda" role="search">
+                <label class="solo-lectores" for="buscar">Buscar llantas por marca o medida</label>
+                <input type="search" id="buscar" name="buscar" placeholder="Buscar por marca o medida...">
+                <button type="submit">Buscar</button>
+            </form>
 
+            <div class="filtrar">
                 <label for="ordenar">Ordenar por:</label>
                 <select id="ordenar" name="ordenar">
                     <option value="recientes">Más recientes</option>
                     <option value="menor-precio">Precio: menor a mayor</option>
                     <option value="mayor-precio">Precio: mayor a menor</option>
+                    <option value="medida">Medida</option>
+                </select>
+
+                <label for="filtrar-medida">Filtrar por medida:</label>
+                <select id="filtrar-medida" name="medida">
+                    <option value="">Todas las medidas</option>
                 </select>
             </div>
 
             <div class="productos">
-                <article>
-                    <img src="includes/img/17570R13.webp"
-                         alt="Llanta Austone 175/70R13">
+                <article data-indice="0" data-precio="45" data-tipo="nuevas">
+                    <img src="includes/img/17570R13.webp" alt="Llanta Austone 175/70R13" loading="lazy">
 
                     <h3>Llanta Austone</h3>
                     <p>Medida: 175/70R13</p>
-                    <p>$45.00</p>
+                    <p class="precio">$45.00</p>
 
-                    <a href="https://wa.me/">
-                        Whatsapp
+                    <a href="mailto:elfrenazo@gmail.com?subject=Consulta%20de%20llantas">
+                        Consultar disponibilidad
                     </a>
                 </article>
 
-                <article>
-                    <img src="includes/img/18565R14.webp"
-                         alt="austone">
+                <article data-indice="1" data-precio="45" data-tipo="nuevas">
+                    <img src="includes/img/18565R14.webp" alt="Llanta Austone 185/65R14" loading="lazy">
 
                     <h3>Llanta Austone</h3>
                     <p>Medida: 185/65R14</p>
-                    <p>$45.00</p>
+                    <p class="precio">$45.00</p>
 
-                    <a href="https://wa.me/">
-                     Whatsapp
+                    <a href="mailto:elfrenazo@gmail.com?subject=Consulta%20de%20llantas">
+                        Consultar disponibilidad
                     </a>
                 </article>
 
-                 <article>
-                    <img src="includes/img/18570R14.webp"
-                         alt="austone">
+                <article data-indice="2" data-precio="45" data-tipo="nuevas">
+                    <img src="includes/img/18570R14.webp" alt="Llanta Austone 185/70R14" loading="lazy">
 
                     <h3>Llanta Austone</h3>
                     <p>Medida: 185/70R14</p>
-                    <p>$45.00</p>
+                    <p class="precio">$45.00</p>
 
-                    <a href="https://wa.me/">
-                     Whatsapp
+                    <a href="mailto:elfrenazo@gmail.com?subject=Consulta%20de%20llantas">
+                        Consultar disponibilidad
                     </a>
                 </article>
 
-                 <article>
-                    <img src="includes/img/195R14.webp"
-                         alt="austone">
+                <article data-indice="3" data-precio="65" data-tipo="nuevas">
+                    <img src="includes/img/195R14.webp" alt="Llanta Austone 195R14" loading="lazy">
 
                     <h3>Llanta Austone</h3>
                     <p>Medida: 195R14</p>
-                    <p>$65.00</p>
+                    <p class="precio">$65.00</p>
 
-                    <a href="https://wa.me/">
-                     Whatsapp
+                    <a href="mailto:elfrenazo@gmail.com?subject=Consulta%20de%20llantas">
+                        Consultar disponibilidad
                     </a>
                 </article>
 
-                 <article>
-                    <img src="includes/img/185R14.webp"
-                         alt="austone">
+                <article data-indice="4" data-precio="65" data-tipo="nuevas">
+                    <img src="includes/img/185R14.webp" alt="Llanta Austone 185R14" loading="lazy">
 
                     <h3>Llanta Austone</h3>
-                    <p>Medida: 185/R14</p>
-                    <p>$65.00</p>
+                    <p>Medida: 185R14</p>
+                    <p class="precio">$65.00</p>
 
-                    <a href="https://wa.me/">
-                     Whatsapp
+                    <a href="mailto:elfrenazo@gmail.com?subject=Consulta%20de%20llantas">
+                        Consultar disponibilidad
                     </a>
                 </article>
 
-                 <article>
-                    <img src="includes/img/19570R14.webp"
-                         alt="austone">
+                <article data-indice="5" data-precio="50" data-tipo="nuevas">
+                    <img src="includes/img/19570R14.webp" alt="Llanta Austone 195/70R14" loading="lazy">
 
                     <h3>Llanta Austone</h3>
                     <p>Medida: 195/70R14</p>
-                    <p>$50.00</p>
+                    <p class="precio">$50.00</p>
 
-                    <a href="https://wa.me/">
-                     Whatsapp
+                    <a href="mailto:elfrenazo@gmail.com?subject=Consulta%20de%20llantas">
+                        Consultar disponibilidad
                     </a>
                 </article>
 
-                 <article>
-                    <img src="includes/img/195R15.webp"
-                         alt="austone">
+                <article data-indice="6" data-precio="80" data-tipo="nuevas">
+                    <img src="includes/img/195R15.webp" alt="Llanta Austone 195R15" loading="lazy">
 
                     <h3>Llanta Austone</h3>
-                    <p>Medida: 195/R15</p>
-                    <p>$80.00</p>
+                    <p>Medida: 195R15</p>
+                    <p class="precio">$80.00</p>
 
-                    <a href="https://wa.me/">
-                     Whatsapp
+                    <a href="mailto:elfrenazo@gmail.com?subject=Consulta%20de%20llantas">
+                        Consultar disponibilidad
                     </a>
                 </article>
 
-                 <article>
-                    <img src="includes/img/19560R15.webp"
-                         alt="austone">
+                <article data-indice="7" data-precio="55" data-tipo="nuevas">
+                    <img src="includes/img/19560R15.webp" alt="Llanta Austone 195/60R15" loading="lazy">
 
                     <h3>Llanta Austone</h3>
                     <p>Medida: 195/60R15</p>
-                    <p>$55.00</p>
+                    <p class="precio">$55.00</p>
 
-                    <a href="https://wa.me/">
-                     Whatsapp
+                    <a href="mailto:elfrenazo@gmail.com?subject=Consulta%20de%20llantas">
+                        Consultar disponibilidad
                     </a>
                 </article>
 
-                 <article>
-                    <img src="includes/img/19565R15.webp"
-                         alt="austone">
+                <article data-indice="8" data-precio="55" data-tipo="nuevas">
+                    <img src="includes/img/19565R15.webp" alt="Llanta Austone 195/65R15" loading="lazy">
 
                     <h3>Llanta Austone</h3>
                     <p>Medida: 195/65R15</p>
-                    <p>$55.00</p>
+                    <p class="precio">$55.00</p>
 
-                    <a href="https://wa.me/">
-                     Whatsapp
+                    <a href="mailto:elfrenazo@gmail.com?subject=Consulta%20de%20llantas">
+                        Consultar disponibilidad
                     </a>
                 </article>
 
-                 <article>
-                    <img src="includes/img/20555R16.webp"
-                         alt="austone">
+                <article data-indice="9" data-precio="55" data-tipo="nuevas">
+                    <img src="includes/img/20555R16.webp" alt="Llanta Austone 205/55R16" loading="lazy">
 
                     <h3>Llanta Austone</h3>
                     <p>Medida: 205/55R16</p>
-                    <p>$55.00</p>
+                    <p class="precio">$55.00</p>
 
-                    <a href="https://wa.me/">
-                     Whatsapp
+                    <a href="mailto:elfrenazo@gmail.com?subject=Consulta%20de%20llantas">
+                        Consultar disponibilidad
                     </a>
                 </article>
 
-                 <article>
-                    <img src="includes/img/22545R17.webp"
-                         alt="austone">
+                <article data-indice="10" data-precio="70" data-tipo="nuevas">
+                    <img src="includes/img/22545R17.webp" alt="Llanta Austone 225/45R17" loading="lazy">
 
                     <h3>Llanta Austone</h3>
                     <p>Medida: 225/45R17</p>
-                    <p>$70.00</p>
+                    <p class="precio">$70.00</p>
 
-                    <a href="https://wa.me/">
-                     Whatsapp
+                    <a href="mailto:elfrenazo@gmail.com?subject=Consulta%20de%20llantas">
+                        Consultar disponibilidad
                     </a>
                 </article>
 
-                 <article>
-                    <img src="includes/img/23575R15.webp"
-                         alt="austone">
+                <article data-indice="11" data-precio="90" data-tipo="nuevas">
+                    <img src="includes/img/23575R15.webp" alt="Llanta Austone 235/75R15" loading="lazy">
 
                     <h3>Llanta Austone</h3>
                     <p>Medida: 235/75R15</p>
-                    <p>$90.00</p>
+                    <p class="precio">$90.00</p>
 
-                    <a href="https://wa.me/">
-                     Whatsapp
+                    <a href="mailto:elfrenazo@gmail.com?subject=Consulta%20de%20llantas">
+                        Consultar disponibilidad
                     </a>
                 </article>
 
-                 <article>
-                    <img src="includes/img/23570R16.webp"
-                         alt="austone">
+                <article data-indice="12" data-precio="85" data-tipo="nuevas">
+                    <img src="includes/img/23570R16.webp" alt="Llanta Austone 235/70R16" loading="lazy">
 
                     <h3>Llanta Austone</h3>
                     <p>Medida: 235/70R16</p>
-                    <p>$85.00</p>
+                    <p class="precio">$85.00</p>
 
-                    <a href="https://wa.me/">
-                     Whatsapp
+                    <a href="mailto:elfrenazo@gmail.com?subject=Consulta%20de%20llantas">
+                        Consultar disponibilidad
                     </a>
                 </article>
 
-                 <article>
-                    <img src="includes/img/24575R16LT.webp"
-                         alt="austone">
+                <article data-indice="13" data-precio="95" data-tipo="nuevas">
+                    <img src="includes/img/24575R16LT.webp" alt="Llanta Austone 245/75R16 LT" loading="lazy">
 
                     <h3>Llanta Austone</h3>
                     <p>Medida: 245/75R16 LT</p>
-                    <p>$95.00</p>
+                    <p class="precio">$95.00</p>
 
-                    <a href="https://wa.me/">
-                     Whatsapp
+                    <a href="mailto:elfrenazo@gmail.com?subject=Consulta%20de%20llantas">
+                        Consultar disponibilidad
                     </a>
                 </article>
 
-                 <article>
-                    <img src="includes/img/31x1050R15.webp"
-                         alt="austone">
+                <article data-indice="14" data-precio="95" data-tipo="nuevas">
+                    <img src="includes/img/31x1050R15.webp" alt="Llanta Austone 31x10.50R15" loading="lazy">
 
                     <h3>Llanta Austone</h3>
                     <p>Medida: 31x10.50R15</p>
-                    <p>$95.00</p>
+                    <p class="precio">$95.00</p>
 
-                    <a href="https://wa.me/">
-                     Whatsapp
+                    <a href="mailto:elfrenazo@gmail.com?subject=Consulta%20de%20llantas">
+                        Consultar disponibilidad
                     </a>
                 </article>
 
-                 <article>
-                    <img src="includes/img/22570R15.webp"
-                         alt="austone">
+                <article data-indice="15" data-precio="70" data-tipo="nuevas">
+                    <img src="includes/img/22570R15.webp" alt="Llanta Austone 225/70R15" loading="lazy">
 
                     <h3>Llanta Austone</h3>
                     <p>Medida: 225/70R15</p>
-                    <p>$70.00</p>
+                    <p class="precio">$70.00</p>
 
-                    <a href="https://wa.me/">
-                     Whatsapp
+                    <a href="mailto:elfrenazo@gmail.com?subject=Consulta%20de%20llantas">
+                        Consultar disponibilidad
                     </a>
                 </article>
 
-                 <article>
-                    <img src="includes/img/21570R15.webp"
-                         alt="austone">
+                <article data-indice="16" data-precio="70" data-tipo="nuevas">
+                    <img src="includes/img/21570R15.webp" alt="Llanta Austone 215/70R15" loading="lazy">
 
                     <h3>Llanta Austone</h3>
                     <p>Medida: 215/70R15</p>
-                    <p>$70.00</p>
+                    <p class="precio">$70.00</p>
 
-                    <a href="https://wa.me/">
-                     Whatsapp
+                    <a href="mailto:elfrenazo@gmail.com?subject=Consulta%20de%20llantas">
+                        Consultar disponibilidad
                     </a>
                 </article>
 
-                 <article>
-                    <img src="includes/img/22555R18.webp"
-                         alt="austone">
+                <article data-indice="17" data-precio="85" data-tipo="nuevas">
+                    <img src="includes/img/22555R18.webp" alt="Llanta Austone 225/55R18" loading="lazy">
 
                     <h3>Llanta Austone</h3>
                     <p>Medida: 225/55R18</p>
-                    <p>$85.00</p>
+                    <p class="precio">$85.00</p>
 
-                    <a href="https://wa.me/">
-                     Whatsapp
+                    <a href="mailto:elfrenazo@gmail.com?subject=Consulta%20de%20llantas">
+                        Consultar disponibilidad
                     </a>
                 </article>
 
-                 <article>
-                    <img src="includes/img/20570R15.webp"
-                         alt="austone">
+                <article data-indice="18" data-precio="70" data-tipo="nuevas">
+                    <img src="includes/img/20570R15.webp" alt="Llanta Austone 205/70R15" loading="lazy">
 
                     <h3>Llanta Austone</h3>
                     <p>Medida: 205/70R15</p>
-                    <p>$70.00</p>
+                    <p class="precio">$70.00</p>
 
-                    <a href="https://wa.me/">
-                     Whatsapp
+                    <a href="mailto:elfrenazo@gmail.com?subject=Consulta%20de%20llantas">
+                        Consultar disponibilidad
                     </a>
                 </article>
 
-                 <article>
-                    <img src="includes/img/21555R17.webp"
-                         alt="austone">
+                <article data-indice="19" data-precio="65" data-tipo="nuevas">
+                    <img src="includes/img/21555R17.webp" alt="Llanta Austone 215/55R17" loading="lazy">
 
                     <h3>Llanta Austone</h3>
-                    <p>Medida: 215-55. R17</p>
-                    <p>$65.00</p>
+                    <p>Medida: 215/55R17</p>
+                    <p class="precio">$65.00</p>
 
-                    <a href="https://wa.me/">
-                     Whatsapp
+                    <a href="mailto:elfrenazo@gmail.com?subject=Consulta%20de%20llantas">
+                        Consultar disponibilidad
                     </a>
                 </article>
 
-                 <article>
-                    <img src="includes/img/TRIANGLE205R14.webp"
-                         alt="triangle">
+                <article data-indice="20" data-precio="70" data-tipo="nuevas">
+                    <img src="includes/img/TRIANGLE205R14.webp" alt="Llanta Triangle 205/R14" loading="lazy">
 
                     <h3>Llanta Triangle</h3>
-                    <p>Medida: 205.R14</p>
-                    <p>$70.00</p>
+                    <p>Medida: 205/R14</p>
+                    <p class="precio">$70.00</p>
 
-                    <a href="https://wa.me/">
-                     Whatsapp
+                    <a href="mailto:elfrenazo@gmail.com?subject=Consulta%20de%20llantas">
+                        Consultar disponibilidad
                     </a>
                 </article>
 
-                 <article>
-                    <img src="includes/img/HIFLY205R14.webp"
-                         alt="hifly">
+                <article data-indice="21" data-precio="75" data-tipo="nuevas">
+                    <img src="includes/img/HIFLY205R14.webp" alt="Llanta Hifly 205/R14" loading="lazy">
 
                     <h3>Llanta Hifly</h3>
-                    <p>Medida: 205.R14</p>
-                    <p>$75.00</p>
+                    <p>Medida: 205/R14</p>
+                    <p class="precio">$75.00</p>
 
-                    <a href="https://wa.me/">
-                     Whatsapp
+                    <a href="mailto:elfrenazo@gmail.com?subject=Consulta%20de%20llantas">
+                        Consultar disponibilidad
                     </a>
                 </article>
 
-                 <article>
-                    <img src="includes/img/21570R16.webp"
-                         alt="austone">
+                <article data-indice="22" data-precio="70" data-tipo="nuevas">
+                    <img src="includes/img/21570R16.webp" alt="Llanta Austone 215/70R16" loading="lazy">
 
                     <h3>Llanta Austone</h3>
-                    <p>Medida: 215-70 R16</p>
-                    <p>$70.00</p>
+                    <p>Medida: 215/70R16</p>
+                    <p class="precio">$70.00</p>
 
-                    <a href="https://wa.me/">
-                     Whatsapp
+                    <a href="mailto:elfrenazo@gmail.com?subject=Consulta%20de%20llantas">
+                        Consultar disponibilidad
                     </a>
                 </article>
 
-                 <article>
-                    <img src="includes/img/20560R16.webp"
-                         alt="austone">
+                <article data-indice="23" data-precio="55" data-tipo="nuevas">
+                    <img src="includes/img/20560R16.webp" alt="Llanta Austone 205/60R16" loading="lazy">
 
                     <h3>Llanta Austone</h3>
-                    <p>Medida: 205-60. R16</p>
-                    <p>$55.00</p>
+                    <p>Medida: 205/60R16</p>
+                    <p class="precio">$55.00</p>
 
-                    <a href="https://wa.me/">
-                     Whatsapp
+                    <a href="mailto:elfrenazo@gmail.com?subject=Consulta%20de%20llantas">
+                        Consultar disponibilidad
                     </a>
                 </article>
 
-                 <article>
-                    <img src="includes/img/26565R17MT.webp"
-                         alt="austone">
+                <article data-indice="24" data-precio="110" data-tipo="nuevas">
+                    <img src="includes/img/26565R17MT.webp" alt="Llanta Austone 265/65R17 MT" loading="lazy">
 
                     <h3>Llanta Austone</h3>
-                    <p>Medida: 265-65R17 MT</p>
-                    <p>$110.00</p>
+                    <p>Medida: 265/65R17 MT</p>
+                    <p class="precio">$110.00</p>
 
-                    <a href="https://wa.me/">
-                     Whatsapp
+                    <a href="mailto:elfrenazo@gmail.com?subject=Consulta%20de%20llantas">
+                        Consultar disponibilidad
                     </a>
                 </article>
 
-                 <article>
-                    <img src="includes/img/26570R16.webp"
-                         alt="austone">
+                <article data-indice="25" data-precio="90" data-tipo="nuevas">
+                    <img src="includes/img/26570R16.webp" alt="Llanta Austone 265/70R16" loading="lazy">
 
                     <h3>Llanta Austone</h3>
-                    <p>Medida: 265-70. R16</p>
-                    <p>$90.00</p>
+                    <p>Medida: 265/70R16</p>
+                    <p class="precio">$90.00</p>
 
-                    <a href="https://wa.me/">
-                     Whatsapp
+                    <a href="mailto:elfrenazo@gmail.com?subject=Consulta%20de%20llantas">
+                        Consultar disponibilidad
                     </a>
                 </article>
 
-                 <article>
-                    <img src="includes/img/20565R15.webp"
-                         alt="austone">
+                <article data-indice="26" data-precio="55" data-tipo="nuevas">
+                    <img src="includes/img/20565R15.webp" alt="Llanta Austone 205/65R15" loading="lazy">
 
                     <h3>Llanta Austone</h3>
-                    <p>Medida: 205-65. R15</p>
-                    <p>$55.00</p>
+                    <p>Medida: 205/65R15</p>
+                    <p class="precio">$55.00</p>
 
-                    <a href="https://wa.me/">
-                     Whatsapp
+                    <a href="mailto:elfrenazo@gmail.com?subject=Consulta%20de%20llantas">
+                        Consultar disponibilidad
                     </a>
                 </article>
 
-                 <article>
-                    <img src="includes/img/26570R17.webp"
-                         alt="austone">
+                <article data-indice="27" data-precio="100" data-tipo="nuevas">
+                    <img src="includes/img/26570R17.webp" alt="Llanta Austone 265/70R17" loading="lazy">
 
                     <h3>Llanta Austone</h3>
-                    <p>Medida: 265-70. R17</p>
-                    <p>$100.00</p>
+                    <p>Medida: 265/70R17</p>
+                    <p class="precio">$100.00</p>
 
-                    <a href="https://wa.me/">
-                     Whatsapp
+                    <a href="mailto:elfrenazo@gmail.com?subject=Consulta%20de%20llantas">
+                        Consultar disponibilidad
                     </a>
-                </article>        
+                </article>
             </div>
         </section>
 
@@ -444,7 +426,7 @@
 
             <div class="servicios">
                 <article>
-                    <img src="img/"
+                    <img src="https://images.unsplash.com/photo-1702146713922-613313be011d?auto=format&fit=crop&w=900&q=80"
                          alt="alineación y balanceo">
 
                     <h3>Alineación y balanceo</h3>
@@ -457,7 +439,7 @@
                 </article>
 
                 <article>
-                    <img src="img/"
+                    <img src="https://images.unsplash.com/photo-1645445522156-9ac06bc7a767?auto=format&fit=crop&w=900&q=80"
                          alt="Reparación">
 
                     <h3>Reparación</h3>
@@ -470,7 +452,7 @@
                 </article>
 
                 <article>
-                    <img src="img/"
+                    <img src="https://images.unsplash.com/photo-1695232554165-a7c3b886b653?auto=format&fit=crop&w=900&q=80"
                          alt="Montaje de llantas">
 
                     <h3>Montaje y desmontaje</h3>
@@ -483,7 +465,7 @@
                 </article>
 
                 <article>
-                    <img src="img/"
+                    <img src="https://images.unsplash.com/photo-1786489623872-2ebdfe51297c?auto=format&fit=crop&w=900&q=80"
                          alt="Cambio de aceite">
 
                     <h3>Cambio de aceite</h3>
@@ -499,7 +481,7 @@
 
         <section id="nosotros">
             <div class="imagen-nosotros">
-                <img src="img/"
+                <img src="https://images.unsplash.com/photo-1786489623872-2ebdfe51297c?auto=format&fit=crop&w=1200&q=80"
                      alt="equipo">
             </div>
 
@@ -507,10 +489,10 @@
                 <h2>Más que una llantería, tu aliado en la ruta</h2>
 
                 <p>
-                   Historia de la llanteria 
+                   En Centro de Llantas El Frenazo queremos ayudarte a cuidar tu vehículo con atención práctica y servicios para tus neumáticos. Visítanos en San Miguel y consulta con nuestro equipo qué opción se adapta mejor a tu recorrido.
                 </p>
 
-                <a href="https://wa.me/">Escribemos por Whatsapp</a>
+                <a href="https://wa.me/" target="_blank" rel="noopener noreferrer">Escríbenos por WhatsApp</a>
             </div>
         </section>
 
@@ -521,20 +503,14 @@
 
             <div class="informacion-contacto">
                 <h2>Información de contacto</h2>
-                    <p>
-                        <h3>Visitenos en</h3>
-                        San Miguel, El Salvador
-                    </p>
+                    <h3>Visítanos en</h3>
+                    <p>San Miguel, El Salvador</p>
 
-                    <p>
-                        <h3>Llamenos al</h3>
-                            +503 
-                    </p>
+                    <h3>Atención</h3>
+                    <p>Consulta disponibilidad y precios en el local.</p>
 
-                    <p>
-                        <h3>Correo electrónico:</h3>
-                            elfrenazo@gmail.com
-                    </p>
+                    <h3>Correo electrónico</h3>
+                    <p><a href="mailto:elfrenazo@gmail.com">elfrenazo@gmail.com</a></p>
 
 
                 <h3>Horarios de atención</h3>
@@ -558,17 +534,19 @@
                             <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle class="punto-instagram" cx="17.5" cy="6.8" r="1"/></svg>
                         </a>
                     </li>
-                    <li>
-                        <a href="https://wa.me/" aria-label="WhatsApp de El Frenazo" target="_blank" rel="noopener noreferrer">
-                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.7a8.4 8.4 0 0 1-12.4 7.4L4 20l.9-4a8.4 8.4 0 1 1 15.6-4.3Z"/><path d="M9 8.2c.2-.5.5-.5.8-.5h.5c.2 0 .4.1.5.4l.7 1.7c.1.2 0 .4-.1.6l-.5.6c-.2.2-.2.4 0 .6.5.9 1.2 1.6 2.1 2.1.2.1.4.1.6-.1l.7-.8c.2-.2.4-.2.6-.1l1.6.8c.2.1.3.3.3.5 0 .4-.2 1.1-.7 1.5-.5.4-1.1.6-1.8.5-1.1-.1-2.5-.8-3.8-1.9-1.1-.9-2-2.1-2.4-3.2-.4-1.1-.1-2.1.3-2.7Z"/></svg>
-                        </a>
-                    </li>
                 </ul>
             </div>
 
             <div class="mapa">
                 <h3>Nuestra ubicación</h3>
-                <p>aca debe de ir el mapa</p>
+                <p>Encuéntranos en San Miguel, El Salvador.</p>
+                <iframe
+                    src="https://maps.google.com/maps?q=San%20Miguel%2C%20El%20Salvador&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                    title="Mapa de ubicación de El Frenazo en San Miguel, El Salvador"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    allowfullscreen></iframe>
+                <a class="enlace-mapa" href="https://maps.app.goo.gl/UJqKN65ZgVWT3bhh8" target="_blank" rel="noopener noreferrer">Abrir ubicación exacta en Google Maps</a>
             </div>
         </section>
     </main>
@@ -576,7 +554,7 @@
     <footer>
         <div class="informacion-footer">
             <h2>EL FRENAZO</h2>
-            <p>Lema</p>
+            <p>Llantas y servicios para seguir adelante.</p>
         </div>
 
         <div class="navegacion-footer">
@@ -595,7 +573,7 @@
             <h3>Contacto</h3>
 
             <p>San Miguel, El Salvador</p>
-            <p>Teléfono: +503 </p>
+            <p><a href="mailto:elfrenazo@gmail.com">elfrenazo@gmail.com</a></p>
             <p>Lunes a sábado: 7:00 am - 5:00 pm</p>
         </div>
 
@@ -605,5 +583,77 @@
             &copy; 2026 El Frenazo. Todos los derechos reservados.
         </p>
     </footer>
+        <script>
+        const campoBusqueda = document.querySelector('#buscar');
+        const formularioBusqueda = document.querySelector('.busqueda');
+        const aviso = document.querySelector('.resultado-busqueda');
+        const ordenar = document.querySelector('#ordenar');
+        const filtrarMedida = document.querySelector('#filtrar-medida');
+        const tarjetas = Array.from(document.querySelectorAll('.productos article'));
+
+        function medidaDe(tarjeta) {
+            return tarjeta.querySelector('p').textContent.replace(/^Medida:\s*/i, '').trim();
+        }
+
+        [...new Set(tarjetas.map(medidaDe))]
+            .sort((a, b) => a.localeCompare(b, 'es', { numeric: true }))
+            .forEach((medida) => {
+                const opcion = document.createElement('option');
+                opcion.value = medida;
+                opcion.textContent = medida;
+                filtrarMedida.appendChild(opcion);
+            });
+
+        function textoNormalizado(texto) {
+            return texto.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase('es').trim();
+        }
+
+        function actualizarCatalogo() {
+            const consulta = textoNormalizado(campoBusqueda.value);
+            const medidaSeleccionada = filtrarMedida.value;
+            const visibles = [];
+
+            tarjetas.forEach((tarjeta) => {
+                const coincide = textoNormalizado(tarjeta.textContent).includes(consulta);
+                const coincideMedida = !medidaSeleccionada || medidaDe(tarjeta) === medidaSeleccionada;
+                tarjeta.hidden = !(coincide && coincideMedida);
+                if (!tarjeta.hidden) visibles.push(tarjeta);
+            });
+
+            const criterio = ordenar.value;
+            if (criterio === 'medida') {
+                visibles.sort((a, b) => medidaDe(a).localeCompare(medidaDe(b), 'es', { numeric: true }));
+            } else if (criterio === 'menor-precio' || criterio === 'mayor-precio') {
+                visibles.sort((a, b) => {
+                    const diferencia = Number(a.dataset.precio) - Number(b.dataset.precio);
+                    return criterio === 'menor-precio' ? diferencia : -diferencia;
+                });
+            } else {
+                visibles.sort((a, b) => Number(a.dataset.indice) - Number(b.dataset.indice));
+            }
+            visibles.forEach((tarjeta) => tarjeta.parentNode.appendChild(tarjeta));
+
+            if (consulta || medidaSeleccionada) {
+                aviso.hidden = false;
+                aviso.textContent = visibles.length
+                    ? `${visibles.length} llanta(s) encontrada(s).`
+                    : 'No encontramos llantas con esos criterios. Prueba con otra medida o marca.';
+            } else {
+                aviso.hidden = true;
+                aviso.textContent = '';
+            }
+        }
+
+        campoBusqueda.addEventListener('input', actualizarCatalogo);
+
+        formularioBusqueda.addEventListener('submit', (evento) => {
+            evento.preventDefault();
+            actualizarCatalogo();
+            document.querySelector('#catalogo').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        ordenar.addEventListener('change', actualizarCatalogo);
+        filtrarMedida.addEventListener('change', actualizarCatalogo);
+    </script>
 </body>
 </html>
