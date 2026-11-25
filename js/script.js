@@ -154,3 +154,26 @@ document.getElementById('cargarMapa').addEventListener('click', (e) => {
     iframe.allowFullscreen = true;
     e.currentTarget.replaceWith(iframe);
 });
+
+// MENÚ HAMBURGUESA EN PANTALLAS PEQUEÑAS
+const encabezado = document.querySelector('.encabezado');
+const botonMenu = document.querySelector('.boton-menu');
+const enlacesMenu = document.querySelectorAll('.menu a');
+
+function cerrarMenu() {
+    encabezado.classList.remove('menu-abierto');
+    botonMenu.setAttribute('aria-expanded', 'false');
+    botonMenu.setAttribute('aria-label', 'Abrir menú');
+}
+
+botonMenu.addEventListener('click', () => {
+    const abierto = encabezado.classList.toggle('menu-abierto');
+    botonMenu.setAttribute('aria-expanded', String(abierto));
+    botonMenu.setAttribute('aria-label', abierto ? 'Cerrar menú' : 'Abrir menú');
+});
+
+enlacesMenu.forEach((enlace) => enlace.addEventListener('click', cerrarMenu));
+
+document.addEventListener('keydown', (evento) => {
+    if (evento.key === 'Escape') cerrarMenu();
+});
