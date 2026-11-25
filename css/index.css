@@ -102,7 +102,7 @@ img {
     color: #ffffff;
     background-image:
         linear-gradient(to right, #850d19, rgba(30, 27, 29, 0.94) 48%, rgba(20, 20, 20, 0.18)),
-        url("../includes/img/hero-llanteria.jpg");
+        url("../includes/img/hero-llanteria.webp");
     background-size: cover;
     background-position: center;
 }
@@ -477,6 +477,18 @@ section:not(#inicio) {
     border-radius: 8px;
 }
 
+.btn-mapa {
+    display: block;
+    width: 100%;
+    min-height: 300px;
+    border: 0;
+    border-radius: 8px;
+    color: #ffffff;
+    background-color: var(--rojo);
+    font-weight: 600;
+    cursor: pointer;
+}
+
 .enlace-mapa {
     display: inline-block;
     margin-top: 12px;
@@ -603,7 +615,7 @@ footer > p:last-child {
         padding: 100px 7% 48px;
         background-image:
             linear-gradient(to top, rgba(20, 20, 20, 0.98), rgba(80, 10, 18, 0.35)),
-            url("../includes/img/hero-llanteria.jpg");
+            url("../includes/img/hero-llanteria-mobil.webp");
         background-position: center;
     }
 
@@ -662,6 +674,9 @@ footer > p:last-child {
     }
 
     .mapa iframe {
+        min-height: 240px;
+    } 
+    .btn-mapa {
         min-height: 240px;
     }
 }

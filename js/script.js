@@ -145,3 +145,12 @@ function actualizarBotonWhatsapp() {
 window.addEventListener('scroll', actualizarBotonWhatsapp, { passive: true });
 window.addEventListener('resize', actualizarBotonWhatsapp);
 actualizarBotonWhatsapp();
+
+document.getElementById('cargarMapa').addEventListener('click', (e) => {
+    const iframe = document.createElement('iframe');
+    iframe.src = 'https://maps.google.com/maps?q=San%20Miguel%2C%20El%20Salvador&t=&z=13&ie=UTF8&iwloc=&output=embed';
+    iframe.title = 'Mapa de ubicación de El Frenazo en San Miguel, El Salvador';
+    iframe.referrerPolicy = 'no-referrer-when-downgrade';
+    iframe.allowFullscreen = true;
+    e.currentTarget.replaceWith(iframe);
+});

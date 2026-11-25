@@ -7,15 +7,15 @@
     <title>El Frenazo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
-    <link rel="icon" href="includes/img/logo-ElFrenazo.png" type="image/png">
+    <link rel="icon" href="includes/img/logo-ElFrenazo.webp" type="image/webp">
 </head>
 
 <body>
     <header class="encabezado">
 
-        <img src="includes/img/logo-ElFrenazo.png" alt="Logo de El Frenazo">
+        <img src="includes/img/logo-ElFrenazo.webp" alt="Logo de El Frenazo" width="52" height="52">
 
         <nav class="menu">
             <ul>
@@ -96,8 +96,8 @@
 
             <div class="servicios">
                 <article>
-                    <img src="https://images.unsplash.com/photo-1702146713922-613313be011d?auto=format&fit=crop&w=900&q=80"
-                         alt="alineación y balanceo">
+                    <img src="includes/img/alineacion.webp"
+                         alt="alineación y balanceo" width="600" height="340" loading="lazy">
 
                     <h3>Alineación y balanceo</h3>
                     <p>
@@ -109,8 +109,8 @@
                 </article>
 
                 <article>
-                    <img src="https://images.unsplash.com/photo-1645445522156-9ac06bc7a767?auto=format&fit=crop&w=900&q=80"
-                         alt="Reparación">
+                    <img src="includes/img/reparacion.webp"
+                         alt="Reparación" width="600" height="340" loading="lazy">
 
                     <h3>Reparación</h3>
                     <p>
@@ -122,8 +122,8 @@
                 </article>
 
                 <article>
-                    <img src="https://images.unsplash.com/photo-1695232554165-a7c3b886b653?auto=format&fit=crop&w=900&q=80"
-                         alt="Montaje de llantas">
+                    <img src="includes/img/montaje.webp"
+                         alt="Montaje de llantas" width="600" height="340" loading="lazy">
 
                     <h3>Montaje y desmontaje</h3>
                     <p>
@@ -135,8 +135,8 @@
                 </article>
 
                 <article>
-                    <img src="https://images.unsplash.com/photo-1786489623872-2ebdfe51297c?auto=format&fit=crop&w=900&q=80"
-                         alt="Cambio de aceite">
+                    <img src="includes/img/cambioaceite.webp"
+                         alt="Cambio de aceite" width="600" height="340" loading="lazy">
 
                     <h3>Cambio de aceite</h3>
                     <p>
@@ -151,8 +151,7 @@
 
         <section id="nosotros">
             <div class="imagen-nosotros">
-                <img src="https://images.unsplash.com/photo-1786489623872-2ebdfe51297c?auto=format&fit=crop&w=1200&q=80"
-                     alt="equipo">
+                <img src="includes/img/nosotros.webp" alt="equipo" width="1000" height="533" loading="lazy">
             </div>
 
             <div>
@@ -209,12 +208,7 @@
             <div class="mapa">
                 <h3>Nuestra ubicación</h3>
                 <p>Encuéntranos en San Miguel, El Salvador.</p>
-                <iframe
-                    src="https://maps.google.com/maps?q=San%20Miguel%2C%20El%20Salvador&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                    title="Mapa de ubicación de El Frenazo en San Miguel, El Salvador"
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"
-                    allowfullscreen></iframe>
+                <button type="button" id="cargarMapa" class="btn-mapa">Ver mapa aquí</button>
                 <a class="enlace-mapa" href="https://maps.app.goo.gl/UJqKN65ZgVWT3bhh8" target="_blank" rel="noopener noreferrer">Abrir ubicación exacta en Google Maps</a>
             </div>
         </section>
