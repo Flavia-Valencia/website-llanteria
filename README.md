@@ -39,7 +39,7 @@ Pasos detallados para ejecutar el proyecto en un entorno local. No requiere inst
 En la terminal de Visual Studio Code ejecutar:
 
 ```bash
-git clone https://github.com/TU-USUARIO/website-llanteria.git
+git clone https://github.com/Flavia-Valencia/website-llanteria.git
 ```
 
 #### 2. Abrir la carpeta del proyecto:
@@ -84,11 +84,8 @@ En `index.html`, buscar el enlace con clase `btn-whatsapp`:
 
 ```html
 <a class="btn-whatsapp" id="btnWhatsapp"
-   href="https://wa.me/50368680000?text=...">
+   href="https://wa.me/50377860872?text=Hola%2C%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios%20y%20llantas."
 ```
-
-- Cambiar `50368680000` por el número real, con código de país y sin signos ni espacios.
-- Cambiar el texto después de `?text=` para modificar el mensaje (los espacios van como `%20`).
 
 #### Cuándo aparece el botón
 En el script al final de `index.html`, ajustar el valor `0.6` de `window.innerHeight * 0.6`. Un número mayor hace que aparezca antes.
@@ -112,15 +109,14 @@ Duplicar una tarjeta `<article>` dentro de `#catalogo` y actualizar imagen, medi
 
 ## 📍 Datos del Negocio
 - **Ubicación:** San Miguel, El Salvador
-- **Teléfono:** +503 6868 0000
-- **Correo:** elfrenazo@gmail.com
+- **Teléfono:** +503 7786 0872
 - **Horario:** lunes a viernes de 7:00 a. m. a 5:00 p. m.; sábado de 7:00 a. m. a 5:00 p. m.
 
 
 ## Equipo Responsable
 En caso de dudas con el proyecto, contactar a:
-- **Nombre:** NOMBRE DEL INTEGRANTE
-- **Correo:** [correo@ejemplo.com](mailto:correo@ejemplo.com)
+- **Nombre:** Flavia Yamileth Valencia Reyes
+- **Correo:** [yasuriyamileth2704@gmail.com](mailto:yasuriyamileth2704@gmail.com)
 
 
 ## Version del Sistema
