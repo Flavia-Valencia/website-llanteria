@@ -40,7 +40,7 @@ const filtrarMedida = document.querySelector('#filtrar-medida');
 const contenedorProductos = document.querySelector('.productos');
 
 const CARPETA_IMAGENES = 'includes/img/';
-const ENLACE_CONSULTA = 'mailto:elfrenazo@gmail.com?subject=Consulta%20de%20llantas';
+const ENLACE_CONSULTA = 'https://wa.me/50377860872?text=Hola%2C%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios%20y%20llantas.';
 
 function crearTarjeta(producto, indice) {
     const tarjeta = document.createElement('article');
@@ -94,7 +94,12 @@ function actualizarCatalogo() {
         const coincide = textoNormalizado(tarjeta.textContent).includes(consulta);
         const coincideMedida = !medidaSeleccionada || medidaDe(tarjeta) === medidaSeleccionada;
         tarjeta.hidden = !(coincide && coincideMedida);
-        if (!tarjeta.hidden) visibles.push(tarjeta);
+        if (tarjeta.hidden) {
+            tarjeta.classList.remove('visible');
+            tarjeta.dataset.enVista = '0';
+        } else {
+            visibles.push(tarjeta);
+        }
     });
 
     const criterio = ordenar.value;
@@ -109,6 +114,17 @@ function actualizarCatalogo() {
         visibles.sort((a, b) => Number(a.dataset.indice) - Number(b.dataset.indice));
     }
     visibles.forEach((tarjeta) => contenedorProductos.appendChild(tarjeta));
+
+    if (observadorScroll) {
+        const tops = new Set();
+        visibles.forEach((tarjeta) => {
+            const rect = tarjeta.getBoundingClientRect();
+            const enVista = rect.bottom > -25 && rect.top < window.innerHeight;
+            tarjeta.dataset.enVista = enVista ? '1' : '0';
+            tops.add(tarjeta.offsetTop);
+        });
+        actualizarFilasCatalogo(tops);
+    }
 
     if (consulta || medidaSeleccionada) {
         aviso.hidden = false;
@@ -133,18 +149,53 @@ ordenar.addEventListener('change', actualizarCatalogo);
 filtrarMedida.addEventListener('change', actualizarCatalogo);
 
 
-//  BOTÓN FLOTANTE DE WHATSAPP 
+//  BOTÓN FLOTANTE DE WHATSAPP Y ENLACE ACTIVO AL SCROLLEAR
 const btnWhatsapp = document.getElementById('btnWhatsapp');
 const seccionInicio = document.getElementById('inicio');
+const enlacesNav = Array.from(document.querySelectorAll('.menu a[href^="#"]'));
+const seccionesNav = enlacesNav
+    .map((enlace) => document.querySelector(enlace.getAttribute('href')))
+    .filter(Boolean);
 
 function actualizarBotonWhatsapp() {
     const pasoInicio = seccionInicio.getBoundingClientRect().bottom <= window.innerHeight * 0.6;
     btnWhatsapp.classList.toggle('visible', pasoInicio);
 }
 
-window.addEventListener('scroll', actualizarBotonWhatsapp, { passive: true });
-window.addEventListener('resize', actualizarBotonWhatsapp);
-actualizarBotonWhatsapp();
+function actualizarEnlaceActivo() {
+    const puntoReferencia = window.innerHeight * 0.32;
+    let idActivo = '';
+
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 24) {
+        idActivo = seccionesNav[seccionesNav.length - 1]?.id || '';
+    } else {
+        seccionesNav.forEach((seccion) => {
+            const rect = seccion.getBoundingClientRect();
+            if (rect.top <= puntoReferencia && rect.bottom > 80) {
+                idActivo = seccion.id;
+            }
+        });
+    }
+
+    enlacesNav.forEach((enlace) => {
+        const activo = enlace.getAttribute('href') === `#${idActivo}`;
+        enlace.classList.toggle('activo', activo);
+        if (activo) {
+            enlace.setAttribute('aria-current', 'location');
+        } else {
+            enlace.removeAttribute('aria-current');
+        }
+    });
+}
+
+function actualizarAlHacerScroll() {
+    actualizarBotonWhatsapp();
+    actualizarEnlaceActivo();
+}
+
+window.addEventListener('scroll', actualizarAlHacerScroll, { passive: true });
+window.addEventListener('resize', actualizarAlHacerScroll);
+actualizarAlHacerScroll();
 
 document.getElementById('cargarMapa').addEventListener('click', (e) => {
     const iframe = document.createElement('iframe');
@@ -155,25 +206,58 @@ document.getElementById('cargarMapa').addEventListener('click', (e) => {
     e.currentTarget.replaceWith(iframe);
 });
 
-// MENÚ HAMBURGUESA EN PANTALLAS PEQUEÑAS
-const encabezado = document.querySelector('.encabezado');
-const botonMenu = document.querySelector('.boton-menu');
-const enlacesMenu = document.querySelectorAll('.menu a');
-
-function cerrarMenu() {
-    encabezado.classList.remove('menu-abierto');
-    botonMenu.setAttribute('aria-expanded', 'false');
-    botonMenu.setAttribute('aria-label', 'Abrir menú');
+// ANIMACIONES AL DESPLAZARSE (repetibles al subir/bajar, sin afectar #inicio / LCP)
+function actualizarFilasCatalogo(topsAfectados) {
+    const tarjetasActivas = tarjetas.filter((t) => !t.hidden);
+    topsAfectados.forEach((topFila) => {
+        const fila = tarjetasActivas.filter((t) => Math.abs(t.offsetTop - topFila) < 5);
+        const filaVisible = fila.some((t) => t.dataset.enVista === '1');
+        fila.forEach((t) => t.classList.toggle('visible', filaVisible));
+    });
 }
 
-botonMenu.addEventListener('click', () => {
-    const abierto = encabezado.classList.toggle('menu-abierto');
-    botonMenu.setAttribute('aria-expanded', String(abierto));
-    botonMenu.setAttribute('aria-label', abierto ? 'Cerrar menú' : 'Abrir menú');
-});
+let observadorScroll = null;
+const prefiereMenosMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-enlacesMenu.forEach((enlace) => enlace.addEventListener('click', cerrarMenu));
+if ('IntersectionObserver' in window && !prefiereMenosMovimiento) {
+    const elementosAnimados = document.querySelectorAll(
+        '.header-catalogo, .busqueda, .filtrar, .productos article, ' +
+        '.header-servicios, .servicios article, ' +
+        '.header-contacto'
+    );
+    const seccionesLaterales = document.querySelectorAll('#nosotros, #contacto');
 
-document.addEventListener('keydown', (evento) => {
-    if (evento.key === 'Escape') cerrarMenu();
-});
+    observadorScroll = new IntersectionObserver((entradas) => {
+        const filasActualizadas = new Set();
+
+        entradas.forEach((entrada) => {
+            const elemento = entrada.target;
+
+            if (elemento.matches('.productos article')) {
+                if (elemento.hidden) return;
+                elemento.dataset.enVista = entrada.isIntersecting ? '1' : '0';
+                filasActualizadas.add(elemento.offsetTop);
+                return;
+            }
+
+            elemento.classList.toggle('visible', entrada.isIntersecting);
+        });
+
+        if (filasActualizadas.size > 0) {
+            actualizarFilasCatalogo(filasActualizadas);
+        }
+    }, {
+        threshold: 0.02,
+        rootMargin: '25px 0px 0px 0px'
+    });
+
+    elementosAnimados.forEach((elemento) => {
+        elemento.classList.add('revelar');
+        observadorScroll.observe(elemento);
+    });
+
+    seccionesLaterales.forEach((seccion) => {
+        seccion.classList.add('revelar-lados');
+        observadorScroll.observe(seccion);
+    });
+}
